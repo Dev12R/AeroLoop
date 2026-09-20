@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light;
+
+  /* -- chart / chrome tokens (validated palette, see docs/METHODOLOGY.md) -- */
+  --surface-0: #f9f9f7; /* page plane */
+  --surface-1: #fcfcfb; /* card / chart surface */
+  --surface-2: #f2f1ed;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --gridline: #e1e0d9;
+  --border: rgba(11, 11, 11, 0.1);
+  --baseline-axis: #c3c2b7;
+
+  /* categorical series (fixed order, do not cycle) */
+  --series-1: #2a78d6; /* blue -- "baseline" forecast */
+  --series-2: #eb6834; /* orange -- "coupled" (feedback-corrected) forecast */
+  --series-3: #1baf7a; /* aqua -- tertiary series */
+  --series-4: #eda100; /* yellow */
+  --series-5: #e87ba4; /* magenta */
+
+  /* sequential (magnitude) ramp, blue, light -> dark */
+  --seq-100: #cde2fb;
+  --seq-300: #6da7ec;
+  --seq-500: #256abf;
+  --seq-700: #0d366b;
+
+  /* CPCB National AQI category colors (official, not themed) */
+  --aqi-good: #4caf50;
+  --aqi-satisfactory: #8bc34a;
+  --aqi-moderate: #fdd835;
+  --aqi-poor: #fb8c00;
+  --aqi-very-poor: #e53935;
+  --aqi-severe: #7b1e3b;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-0: #0d0d0d;
+    --surface-1: #1a1a19;
+    --surface-2: #232322;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --gridline: #2c2c2a;
+    --border: rgba(255, 255, 255, 0.1);
+    --baseline-axis: #383835;
+
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --series-5: #d55181;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-0);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--series-1);
+}
