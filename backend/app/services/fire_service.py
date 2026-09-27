@@ -92,6 +92,7 @@ async def _fetch_firms_live() -> dict | None:
 
     return {
         "source": "firms_live",
+        "is_live": True,
         "fire_count": len(lines) - 1,
         "mean_frp_mw": round(sum(frps) / len(frps), 1) if frps else 0.0,
     }
@@ -120,6 +121,7 @@ def _seasonal_model(target_date: date) -> dict:
 
     return {
         "source": "seasonal_model",
+        "is_live": False,
         "fire_count": fire_count,
         "mean_frp_mw": mean_frp,
     }
