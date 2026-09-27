@@ -299,6 +299,7 @@ def _step(
             "fire_count": fire.get("fire_count", 0),
             "mean_frp_mw": fire.get("mean_frp_mw", 0.0),
             "fire_source": fire.get("source"),
+            "is_live": fire.get("is_live", False),
             "wind_alignment_score": round(alignment_score, 2),
             "attributed_fraction": round(stubble_fraction, 3),
             "attributed_pm2_5": round(stubble_pm2_5, 1),

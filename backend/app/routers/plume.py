@@ -53,6 +53,7 @@ async def get_stubble_plume(
         "station": forecast["station"],
         "distance_to_stubble_belt_km": forecast["distance_to_stubble_belt_km"],
         "bearing_to_stubble_belt_deg": forecast["bearing_to_stubble_belt_deg"],
+        "fire_data_live": forecast["hourly"][0]["stubble_plume"]["is_live"] if forecast["hourly"] else False,
         "fire_source": forecast["hourly"][0]["stubble_plume"]["fire_source"] if forecast["hourly"] else None,
         "impact_window": impact_window,
         "timeline": timeline,
